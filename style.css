@@ -43,8 +43,43 @@ body{
     background-color: white;
     height: 40px;
     display: grid;
-    justify-content: space-between;
+    grid-template-columns: auto 40px 40px;
+    border-radius: 20px;
+    border: #333 1px solid;
 
+}
+.btn{
+    display: grid;
+    place-items: center;
+}
+#search-bar{
+    border-radius: 20px;
+    outline: none;
+    border-color: transparent;
+    padding-left: 20px;
+}
+footer{
+    height: 150px;
+    background-color: white;
+    text-align: center;
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+
+}
+footer p{
+    margin: 25px auto 10px;
+}
+.link-box a{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 18px;
+    color: #333;
+
+}
+footer h4{
+    margin-top: 10px;
 }
 
 @media only screen and (max-width: 600px) {
@@ -59,5 +94,8 @@ body{
     #search{
         margin-top: 60px;
         width: 90%;
+    }
+    footer p{
+        font-size: 12px;
     }
   }
