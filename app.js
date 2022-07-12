@@ -11,6 +11,58 @@ const searchBar = document.getElementById("search-bar");
 const searchbtn = document.getElementById("search-btn");
 searchbtn.addEventListener('click', startsearch);
 
+let yearfilter = [
+    {
+        "year": 2021,
+        "state": 0
+    },
+    {
+        "year": 2020,
+        "state": 0
+    },
+    {
+        "year": 2019,
+        "state": 0
+    },
+    {
+        "year": 2018,
+        "state": 0
+    },
+    {
+        "year": 2017,
+        "state": 0
+    },
+    {
+        "year": 2016,
+        "state": 0
+    },
+    {
+        "year": 2015,
+        "state": 0
+    },
+    {
+        "year": 2014,
+        "state": 0
+    },
+    {
+        "year": 2013,
+        "state": 0
+    }
+
+];
+
+// let filterswitch=0;
+
+function checkfilterswitch(){
+    let n =0;
+    yearfilter.forEach(y=>{
+        if(y.state){n=1;}
+    });
+    if(n){return 1;}else{return 0;}
+
+}
+
+
 function searchQuestion(data){
     removeQuestions();
     query = getQuery().toLowerCase();
@@ -21,7 +73,24 @@ function searchQuestion(data){
         n=ques.search(query);
         if(n>=0){
             // console.log(data.GSI[i].Question);
-            displayQuestions(data.GSI[i]);
+            if(checkfilterswitch()){
+                yearfilter.forEach(y=>{
+                    if(y.state){
+                        if(y.year==data.GSI[i].Year){
+                            displayQuestions(data.GSI[i]);
+                        }
+                        
+                    }
+                    
+                })
+
+            }
+            else{
+                displayQuestions(data.GSI[i]);
+            }
+            
+            
+            
         }
         
     }
@@ -54,6 +123,32 @@ document.addEventListener("keydown", function(event){
 });
 
 const filterbtn = document.getElementById("filter-btn");
+const filterbox = document.getElementsByClassName("filter-box");
+filterbtn.addEventListener('click', function(){
+    filterbox[0].classList.toggle("filter-box-open");
+
+});
+
+const filtertags = document.querySelectorAll(".filter-tags");
+
+filtertags.forEach(element => {
+    element.addEventListener('click', function(){
+        element.classList.toggle("filter-tags-clicked");
+        yearfilter.forEach(y=>{
+            if(element.innerText==y.year){
+                if(y.state){
+                    y.state=0;
+                }
+                else{
+                    y.state=1;
+                }
+            }
+    
+        });         
+    });
+    
+});
+
 
 const questionsList = document.getElementById("questions-list");
 
