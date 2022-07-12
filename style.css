@@ -13,11 +13,12 @@ body{
     height: 50px;
     text-align: center;
     font-weight: bold;
-    font-size: 24px;
+    font-size: 20px;
     background-color: white;
     display: grid;
     place-items: center;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    box-shadow: rgba(100, 100, 111, 0.1) 0px 7px 29px 0px;
+    font-family: 'Montserrat', sans-serif;
 
 
 }
@@ -28,7 +29,6 @@ body{
     margin-top: 50px;
 }
 #banner h1{
-    /* font-family: 'Comfortaa', cursive; */
     font-weight: bold;
     font-size: 48px;
     margin-top: 25px;
@@ -38,51 +38,106 @@ body{
 }
 #search{
     margin: 0px auto;
-    margin-top: 150px;
+    margin-top: 100px;
     width: 60%;
     background-color: white;
     height: 40px;
     display: grid;
-    grid-template-columns: auto 40px 40px;
+    grid-template-columns: auto 40px 40px 10px;
     border-radius: 20px;
-    border: #333 1px solid;
+    /* border: #333 1px solid; */
+    box-shadow: rgba(100, 100, 111, 0.1) 0px 7px 29px 0px;
 
 }
 .btn{
     display: grid;
     place-items: center;
 }
+.btn:hover{
+    cursor: pointer;
+}
 #search-bar{
     border-radius: 20px;
+    width: 100%;
+    height: 40px;
     outline: none;
-    border-color: transparent;
+    border: none;
     padding-left: 20px;
+    font-family: 'Poppins', sans-serif;
 }
 footer{
-    height: 150px;
+    margin-top: 50px;
+    height: auto;
     background-color: white;
     text-align: center;
-    position: fixed;
-    bottom: 0px;
     width: 100%;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    box-shadow: rgba(100, 100, 111, 0.1) 0px 7px 29px 0px;
 
 }
-footer p{
-    margin: 25px auto 10px;
+#foot-p{
+    padding-top: 25px;
+    padding-bottom: 15px;
+    font-size: 14px;
 }
 .link-box a{
-    margin-top: 20px;
-    margin-bottom: 20px;
     font-size: 18px;
     color: #333;
 
 }
 footer h4{
-    margin-top: 10px;
+    padding-top: 15px;
+    padding-bottom: 25px;
+    font-family: 'Montserrat', sans-serif;
+}
+#questions-list{
+    margin: 80px auto;
+    width: 100%;
+    min-height: 200px;
+}
+.question-box{
+    background-color: white;
+    border-radius: 10px;
+    width: 60%;
+    /* height: 100px; */
+    margin: 20px auto;
+    box-shadow: rgba(100, 100, 111, 0.1) 0px 7px 29px 0px;
+    display: grid;
+    grid-template-columns: 90%;
+    justify-content: space-around;
+}
+.questions{
+    margin: 0px auto;
+    padding-top: 15px;
+    /* padding-bottom: 15px; */
+    font-size: 14px;
+    /* width: 90%; */
+}
+.qinfo{
+    height: 40px;
+    margin-top: 15px;
+    border-top: 1px #333 solid;
+    display: grid;
+    grid-template-columns: 100px 100px 100px 150px;
+    justify-content: space-between;
+    padding-top: 10px;
+    padding-bottom: 15px;
+
+}
+.qinfo-items{
+    /* color: red; */
+    font-size: 14px;
+    height: 100%;
+    display: grid;
+    place-items: center start;
+
 }
 
 @media only screen and (max-width: 600px) {
+    *{
+        padding: 0px;
+        margin: 0px;
+        box-sizing: border-box;
+    }
     #banner{
         text-align: left;
         width: 90%;
@@ -98,4 +153,29 @@ footer h4{
     footer p{
         font-size: 12px;
     }
+    .question-box{
+        width: 90%;
+    }
+    #questions-list{
+        width: 100%;
+    }
+    .questions{
+        font-size: 12px;
+        /* width: 90%; */
+        margin: 0px auto;
+        padding-top: 15px;
+    }
+    .qinfo{
+        height: 70px;
+        margin-top: 15px;
+        border-top: 1px #333 solid;
+        display: grid;
+        grid-template-columns: 150px 100px 100px;
+        justify-content: space-between;
+    
+    }
+    .qinfo-items{
+        font-size: 12px;
+    }
+
   }
