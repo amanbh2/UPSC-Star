@@ -1,5 +1,5 @@
 function startsearch(){
-    fetch("./UPSC Star Data - GSI.json")
+    fetch("./UPSC Star Data.json")
     .then(response => {
     return response.json();
     })
@@ -87,10 +87,33 @@ function searchQuestion(data){
             }
             else{
                 displayQuestions(data.GSI[i]);
+            }    
+        }
+        
+    }
+
+    dataSize3 = data.GSIII.length;
+    // console.log(dataSize);
+    for (let i = 0; i < dataSize3; i++) {
+        ques=(data.GSIII[i].Question).toLowerCase();
+        n=ques.search(query);
+        if(n>=0){
+            // console.log(data.GSI[i].Question);
+            if(checkfilterswitch()){
+                yearfilter.forEach(y=>{
+                    if(y.state){
+                        if(y.year==data.GSIII[i].Year){
+                            displayQuestions(data.GSIII[i]);
+                        }
+                        
+                    }
+                    
+                })
+
             }
-            
-            
-            
+            else{
+                displayQuestions(data.GSIII[i]);
+            }    
         }
         
     }
