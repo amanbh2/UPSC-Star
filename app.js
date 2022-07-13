@@ -62,22 +62,45 @@ function checkfilterswitch(){
 
 }
 
+//0: All 1:GS-I 2:GS-II 3:GS-III 4:GS-IV
+let papercode = 1;
 
 function searchQuestion(data){
     removeQuestions();
     query = getQuery().toLowerCase();
-    dataSize = data.GSI.length;
+    switch(papercode){
+        case 1:
+            dataSize = data.GSI.length;
+            filterdata = data.GSI;
+            break;
+        case 2:
+            dataSize = data.GSII.length;
+            filterdata = data.GSII;
+            break;
+        case 3:
+            dataSize = data.GSIII.length;
+            filterdata = data.GSIII;
+            break;
+        case 4:
+            dataSize = data.GSIV.length;
+            filterdata = data.GSIV;
+            break;
+        default:
+            dataSize = data.GSI.length;
+            filterdata = data.GSI;
+            break;
+    }
     // console.log(dataSize);
     for (let i = 0; i < dataSize; i++) {
-        ques=(data.GSI[i].Question).toLowerCase();
+        ques=(filterdata[i].Question).toLowerCase();
         n=ques.search(query);
         if(n>=0){
             // console.log(data.GSI[i].Question);
             if(checkfilterswitch()){
                 yearfilter.forEach(y=>{
                     if(y.state){
-                        if(y.year==data.GSI[i].Year){
-                            displayQuestions(data.GSI[i]);
+                        if(y.year==filterdata[i].Year){
+                            displayQuestions(filterdata[i]);
                         }
                         
                     }
@@ -86,33 +109,7 @@ function searchQuestion(data){
 
             }
             else{
-                displayQuestions(data.GSI[i]);
-            }    
-        }
-        
-    }
-
-    dataSize3 = data.GSIII.length;
-    // console.log(dataSize);
-    for (let i = 0; i < dataSize3; i++) {
-        ques=(data.GSIII[i].Question).toLowerCase();
-        n=ques.search(query);
-        if(n>=0){
-            // console.log(data.GSI[i].Question);
-            if(checkfilterswitch()){
-                yearfilter.forEach(y=>{
-                    if(y.state){
-                        if(y.year==data.GSIII[i].Year){
-                            displayQuestions(data.GSIII[i]);
-                        }
-                        
-                    }
-                    
-                })
-
-            }
-            else{
-                displayQuestions(data.GSIII[i]);
+                displayQuestions(filterdata[i]);
             }    
         }
         
@@ -153,6 +150,9 @@ filterbtn.addEventListener('click', function(){
 });
 
 const filtertags = document.querySelectorAll(".filter-tags");
+const papertags = document.querySelectorAll(".paper-tags");
+papertags[0].classList.add("paper-tags-clicked");
+
 
 filtertags.forEach(element => {
     element.addEventListener('click', function(){
@@ -167,9 +167,62 @@ filtertags.forEach(element => {
                 }
             }
     
-        });         
+        });       
     });
     
+});
+
+paperfilters=[
+    {
+        paper: "GS-I",
+        state: 1
+    },
+    {
+        paper: "GS-II",
+        state: 0
+    },
+    {
+        paper: "GS-III",
+        state: 0
+    },
+    {
+        paper: "GS-IV",
+        state: 0
+    },
+];
+
+papertags.forEach(element=>{
+    element.addEventListener('click', function(){
+        papertags.forEach(item=>{
+            if(element.innerText==item.innerText){item.classList.add("paper-tags-clicked");}
+            else{item.classList.remove("paper-tags-clicked")}
+
+        });
+        paperfilters.forEach(item=>{
+            if(item.paper==element.innerText){
+                item.state=1;
+                switch(item.paper){
+                    case "GS-I":
+                        papercode=1;
+                        break;
+                    case "GS-II":
+                        papercode=2;
+                        break;
+                    case "GS-III":
+                        papercode=3;
+                        break;
+                    case "GS-IV":
+                        papercode=4;
+                        break;
+                    default:
+                }
+            }
+            else{item.state=0;}
+
+        });
+
+    });
+
 });
 
 
