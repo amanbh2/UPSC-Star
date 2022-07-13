@@ -8,16 +8,9 @@ const searchbox=document.querySelector("#search");
 const footer=document.querySelector("footer");
 const githublink=document.querySelector("#github-link");
 
-if(Cookies.get("dark")){
-    applydarkmode();
-}
-else{
-    applylightmode();
-};
 
 function applydarkmode(){
     darkmode=1;
-    Cookies.set('dark', true);
     themeicon.innerText="light_mode";
     document.body.style.backgroundColor = "#121212";
     document.body.style.color = "#fff";
@@ -32,7 +25,6 @@ function applydarkmode(){
 }
 function applylightmode(){
     darkmode=0;
-    Cookies.set('dark', false);
     themeicon.innerText="dark_mode";
     document.body.style.backgroundColor = "#f5f5f5";
     document.body.style.color = "#333";
