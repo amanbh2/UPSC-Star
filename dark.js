@@ -8,6 +8,11 @@ const searchbox=document.querySelector("#search");
 const footer=document.querySelector("footer");
 const githublink=document.querySelector("#github-link");
 
+const d= new Date();
+// console.log(d.getHours());
+if(d.getHours()>=20){
+    applydarkmode();
+}
 
 function applydarkmode(){
     darkmode=1;
