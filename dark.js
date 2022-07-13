@@ -10,7 +10,7 @@ const githublink=document.querySelector("#github-link");
 
 const d= new Date();
 // console.log(d.getHours());
-if(d.getHours()>=20){
+if(d.getHours()>=20 || d.getHours()<5){
     applydarkmode();
 }
 

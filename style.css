@@ -183,7 +183,7 @@ footer h4{
     margin-top: 15px;
     border-top: 1px #333 solid;
     display: grid;
-    grid-template-columns: 100px 100px 100px 150px;
+    grid-template-columns: 100px 100px 100px 150px 100px;
     justify-content: space-between;
     padding-top: 10px;
     padding-bottom: 15px;
@@ -191,11 +191,14 @@ footer h4{
 }
 .qinfo-items{
     /* color: red; */
-    font-size: 14px;
+    font-size: 12px;
     height: 100%;
     display: grid;
     place-items: center start;
 
+}
+.copy-btn{
+    font-size: 10px;
 }
 
 @media only screen and (max-width: 600px) {

@@ -237,6 +237,7 @@ function displayQuestions(item){
         <div class="qinfo-items">Year: ${item.Year}</div>
         <div class="qinfo-items">Marks: ${item.Marks}</div>
         <div class="qinfo-items">Word Limit: ${item.WordLimit}</div>
+        <div class="qinfo-items" data-question="${item.Question}" style="cursor:pointer;user-select:none;" onclick="copyquestion(this);" title="Copy Question">Copy</div>
     </div>`;
     
     questionsList.appendChild(questionBox);
@@ -251,23 +252,63 @@ function displayQuestions(item){
             boxes.style.borderColor="#333";
 
         });
-        // qinfoBox.style.borderColor="#333";
         
     }
     else{
         //Dark Mode
         questionBox.style.backgroundColor="rgba(255, 255, 255, 0.12)";
         questionBox.style.color="#fff";
-        // qinfoBox.style.borderColor="#fff";
         qinfoBox.forEach(boxes=>{
             boxes.style.borderColor="#fff";
 
         });
-    }    
+    }
+    
 }
 function removeQuestions(){
     t=questionsList.childElementCount;
     for(var i=0;i<t;i++){
         questionsList.removeChild(questionsList.children[0]);
     }
+}
+
+function copyquestion(element){
+    // alert(element.dataset.question);
+    // navigator.clipboard.writeText(element.dataset.question);
+    copyText(element.dataset.question);
+    element.innerText="Copied";
+
+}
+
+function copyText (textToCopy){
+
+    this.copied = false
+    
+    // Create textarea element
+    const textarea = document.createElement('textarea')
+    
+    // Set the value of the text
+    textarea.value = textToCopy
+    
+    // Make sure we cant change the text of the textarea
+    textarea.setAttribute('readonly', '');
+    
+    // Hide the textarea off the screnn
+    textarea.style.position = 'absolute';
+    textarea.style.left = '-9999px';
+    
+    // Add the textarea to the page
+    document.body.appendChild(textarea);
+  
+    // Copy the textarea
+    textarea.select()
+  
+    try {
+      var successful = document.execCommand('copy');
+      this.copied = true
+    } catch(err) {
+      this.copied = false
+    }
+  
+    textarea.remove()
 }
