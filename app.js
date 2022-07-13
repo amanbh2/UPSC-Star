@@ -1,5 +1,5 @@
 function startsearch(){
-    fetch("./UPSC Star Data.json")
+    fetch("./UPSC Star Data - GSI.json")
     .then(response => {
     return response.json();
     })
