@@ -25,11 +25,16 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,1,0" />
     <script src="https://kit.fontawesome.com/d7b86548bd.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;500;700&display=swap" rel="stylesheet">
-
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,1,0" />
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js"></script>
 
 </head>
 <body>
-    <div id="header">UPSC STAR</div>
+    <div id="header">
+        <div></div>
+        <div> UPSC STAR</div>
+        <div><span class="material-symbols-outlined"  id="theme-icon">dark_mode</span></div>
+    </div>
     <div id="banner">
         <h1>Filter through ocean of PYQs.</h1>
         <p>Questions asked in UPSC Civil Service Examination | Mains - Written</p>
@@ -63,9 +68,7 @@
     </div>
 
 
-    <div id="questions-list">
-        <div id="question-box"></div>
-    </div>
+    <div id="questions-list"></div>
 
     <footer>
         <p id="foot-p">Dev</p>
@@ -75,6 +78,8 @@
         <div><h4>Aman Bhaskar</h4></div>
     </footer>
 
+    
     <script src="app.js"></script>
+    <script src="dark.js"></script>
 </body>
 </html>

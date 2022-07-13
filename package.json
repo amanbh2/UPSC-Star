@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/amanbh2/UPSC-Star/issues"
   },
-  "homepage": "https://github.com/amanbh2/UPSC-Star#readme"
+  "homepage": "https://github.com/amanbh2/UPSC-Star#readme",
+  "dependencies": {
+    "js-cookie": "^3.0.1"
+  }
 }

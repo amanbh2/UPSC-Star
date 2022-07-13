@@ -238,8 +238,32 @@ function displayQuestions(item){
         <div class="qinfo-items">Marks: ${item.Marks}</div>
         <div class="qinfo-items">Word Limit: ${item.WordLimit}</div>
     </div>`;
+    
+    questionsList.appendChild(questionBox);
+    
+    qinfoBox = document.querySelectorAll(".qinfo");
 
-    questionsList.appendChild(questionBox);    
+    if(!darkmode){
+        //Light Mode
+        questionBox.style.backgroundColor="#fff";
+        questionBox.style.color="#333";
+        qinfoBox.forEach(boxes=>{
+            boxes.style.borderColor="#333";
+
+        });
+        // qinfoBox.style.borderColor="#333";
+        
+    }
+    else{
+        //Dark Mode
+        questionBox.style.backgroundColor="rgba(255, 255, 255, 0.12)";
+        questionBox.style.color="#fff";
+        // qinfoBox.style.borderColor="#fff";
+        qinfoBox.forEach(boxes=>{
+            boxes.style.borderColor="#fff";
+
+        });
+    }    
 }
 function removeQuestions(){
     t=questionsList.childElementCount;
