@@ -5,6 +5,8 @@ themeicon.addEventListener("click", changetheme);
 
 const header=document.querySelector("#header");
 const searchbox=document.querySelector("#search");
+const footer=document.querySelector("footer");
+const githublink=document.querySelector("#github-link");
 
 if(Cookies.get("dark")){
     applydarkmode();
@@ -12,6 +14,7 @@ if(Cookies.get("dark")){
 else{
     applylightmode();
 };
+
 function applydarkmode(){
     darkmode=1;
     Cookies.set('dark', true);
@@ -22,6 +25,9 @@ function applydarkmode(){
     header.style.color="#fff";
     search.style.backgroundColor="rgba(255, 255, 255, 0.12)";
     searchBar.style.color="#fff";
+    footer.style.backgroundColor="rgba(255, 255, 255, 0.12)";
+    footer.style.color="#fff";
+    githublink.style.color="#fff";
 
 }
 function applylightmode(){
@@ -34,6 +40,9 @@ function applylightmode(){
     header.style.color="#333";
     search.style.backgroundColor="#fff";
     searchBar.style.color="#333";
+    footer.style.backgroundColor="#fff";
+    footer.style.color="#333";
+    githublink.style.color="#333";
 
 }
 
@@ -42,10 +51,10 @@ function changetheme(){
     // console.log("Clicked!");
     removeQuestions();
     if(darkmode){
-        applydarkmode();
+        applylightmode();
     }
     else{
-        applylightmode();
+        applydarkmode();
         
     }
 }
