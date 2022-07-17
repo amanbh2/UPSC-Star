@@ -35,8 +35,7 @@ Link:https://amanbh2.github.io/UPSC-Star/
 ![image](https://user-images.githubusercontent.com/69214242/179416323-97cba958-722f-497d-b384-a644be3460f9.png)
 
 + Mobile Devices:
-![Screenshot_20220712-134722_Chrome](https://user-images.githubusercontent.com/69214242/179416385-273564d2-015a-4037-ac5a-14b67ba51b0e.jpg)
-![Screenshot_20220714-071119_Chrome](https://user-images.githubusercontent.com/69214242/179416387-618154cc-619c-4274-b69e-d759ba24860f.jpg)
+![Screenshot_20220712-134722_Chrome](https://user-images.githubusercontent.com/69214242/179416385-273564d2-015a-4037-ac5a-14b67ba51b0e.jpg)![Screenshot_20220714-071119_Chrome](https://user-images.githubusercontent.com/69214242/179416387-618154cc-619c-4274-b69e-d759ba24860f.jpg)
 
 
 
